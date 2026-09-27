@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Airflow Test Dashboard</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; background: #f5f5f5; }
+    h1 { color: #1a1a1a; }
+    .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+    .pass { color: #0a0; font-weight: bold; }
+    .fail { color: #c00; font-weight: bold; }
+    a { color: #0066cc; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>Airflow Automated Test Dashboard</h1>
+
+  <div class="card">
+    <h2>Latest Run</h2>
+    <p><a href="/reports/latest.html" target="_blank">Open Latest HTML Report</a></p>
+    <pre id="latest-summary">Loading...</pre>
+  </div>
+
+  <div class="card">
+    <h2>Previous Runs</h2>
+    <div id="history">Loading history...</div>
+  </div>
+
+  <script>
+    // This is a simple static version. For full history listing you can later
+    // add a small Python/Node server. For now we show the latest report link.
+    document.getElementById('latest-summary').textContent = 
+      "Click the link above to view the full latest report.\n" +
+      "Historical reports are stored in the /reports folder by timestamp.";
+    document.getElementById('history').innerHTML = 
+      "<p>Historical reports are saved under <code>D:\\airflow-testing\\reports\\YYYY-MM-DD_HH-MM-SS\\</code></p>" +
+      "<p>Open any <code>report.html</code> inside those folders to see past results.</p>";
+  </script>
+</body>
+</html>

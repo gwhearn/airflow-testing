@@ -1,0 +1,66 @@
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Environment & secret files
+.env
+.env.*
+*.env
+*.secret
+*.secrets
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+*credentials*.json
+
+# Airflow specific
+logs/
+config/airflow.cfg
+config/*.db
+config/unittests.cfg
+webserver_config.py
+airflow.cfg
+airflow.db
+
+# DAGs/plugins build noise
+dags/**/*.pyc
+plugins/**/*.pyc
+
+# Reports & test artifacts
+reports/
+dashboard/reports/
+htmlcov/
+.coverage
+coverage.xml
+*.htmlcov
+*.log
+*.out
+
+# Docker/compose local overrides
+docker-compose.override.yml
+.docker-compose*
+.docker/**
+**/.terraform*
